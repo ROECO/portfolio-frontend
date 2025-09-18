@@ -5,4 +5,4 @@
 </script>
 
 <h1>Projects</h1>
-<ProjectCard {data}/>
+<ProjectCard projects="{data.projects}"/>
