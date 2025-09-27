@@ -1,3 +1,35 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+    import About from '$lib/components/about/+page.svelte'
+    import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
+
+    // If you need data (e.g., projects), load it with +page.server.ts and get it via `export let data`
+    export let data: { projects?: any[] };
+</script>
+
+<main>
+    <section id="home">
+        <!-- Hero/intro -->
+    </section>
+
+    <section id="about">
+        <About />
+    </section>
+
+    <section id="projects">
+        <ProjectCard projects={data?.projects ?? []} />
+    </section>
+
+    <section id="contact">
+        <!-- Contact content goes here -->
+    </section>
+</main>
+
+<style>
+    html {
+        scroll-behavior: smooth; /* smooth scrolling */
+    }
+    section {
+        scroll-margin-top: var(--nav-height, 72px); /* offset for fixed navbar */
+        padding-block: 4rem;
+    }
+</style>

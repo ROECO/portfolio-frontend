@@ -1,9 +1,9 @@
 <script lang="ts">
-    /** @type {import('./$types').PageData} */
+    /** @type {import('../../../../.svelte-kit/types/src/routes').PageData} */
     export let data;
 </script>
 
-<main class="about-container">
+<div class="about-container">
     <h1>About Me</h1>
     <section class="about-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
@@ -14,7 +14,7 @@
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
             laborum.</p>
     </section>
-</main>
+</div>
 
 <style>
     .about-container {
