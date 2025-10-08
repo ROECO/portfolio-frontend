@@ -9,18 +9,15 @@ export const load: PageServerLoad = async ({ fetch }) => {
     if (API_USER && API_PASS) {
         const auth = Buffer.from(`${API_USER}:${API_PASS}`).toString('base64');
         headers.Authorization = `Basic ${auth}`;
-        console.log("Using credentials");
-    } else {
-        console.log("No credentials provided");
     }
 
-    const res = await fetch(`${API_BASE}/api/v1/projects`, { headers });
+    const res = await fetch(`${API_BASE}/api/v1/about`, { headers });
     
     if (!res.ok) {
         throw new Error(`API request failed: ${res.status}`);
     }
     
-    const projects = await res.json();
+    const aboutSections = await res.json();
     
-    return { projects };
+    return { aboutSections };
 };

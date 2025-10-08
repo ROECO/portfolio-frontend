@@ -57,9 +57,9 @@
     .navbar a:focus-visible {
         background-color: rgba(255, 255, 255, 0.12);
     }
-    .homelogo a:hover {
-        background-color: rgba(255, 255, 255, 0.12);
-    }
+    /*.homelogo a:hover {*/
+    /*    background-color: rgba(255, 255, 255, 0.12);*/
+    /*}*/
 
 
     @media (max-width: 960px) {

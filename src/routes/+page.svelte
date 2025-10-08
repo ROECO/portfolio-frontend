@@ -1,33 +1,33 @@
 <script lang="ts">
-    import About from '$lib/components/about/+page.svelte'
+    // @ts-ignore
+    import AboutCarousel from '$lib/components/about/AboutCarousel.svelte';
+    // @ts-ignore
     import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
 
-    export let data: { projects?: any[] };
+    /** @type {import('./$types').PageData} */
+    export let data;
 </script>
 
 <main>
-    <section id="home">
-    </section>
-
     <section id="about">
-        <About />
+        <AboutCarousel sections={data.aboutSections} />
     </section>
 
     <section id="projects">
-        <ProjectCard projects={data?.projects ?? []} />
+        <ProjectCard projects={data.projects} />
     </section>
 
     <section id="contact">
-
+        <!-- Contact section placeholder -->
     </section>
 </main>
 
 <style>
-    html {
-        scroll-behavior: smooth;
+    main {
+        background-color: #dcdcdc;
     }
+    
     section {
-        scroll-margin-top: var(--nav-height, 72px);
-        padding-block: 4rem;
+        scroll-margin-top: 64px;
     }
 </style>
